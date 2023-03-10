@@ -1,0 +1,27 @@
+{
+    "name": "exit-exam-mvc-2565-annisa",
+    "version": "1.0.0",
+    "description": "This is project folder Exit exam CS KMITL of 63050212",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "autocannon": "^7.10.0",
+        "axios": "^0.27.2",
+        "body-parser": "^1.20.0",
+        "bootstrap": "^5.2.2",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "helmet": "^6.0.0",
+        "mysql": "^2.18.1",
+        "node-cache": "^5.1.2",
+        "nodemon": "^2.0.20",
+        "path": "^0.12.7"
+    }
+}

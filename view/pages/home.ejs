@@ -1,0 +1,110 @@
+<%-include('../partials/header.ejs')%>
+    <!DOCTYPE html>
+    <html lang="" en>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+        </script>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .F1 {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .font16 {
+            font-size: 16px;
+        }
+
+        .font30 {
+            font-size: 30px;
+        }
+
+        .padding-bt {
+            padding-bottom: 1.5%;
+        }
+
+        .padding-ls {
+            padding-inline-start: 4.0%;
+        }
+
+        .padding-le {
+            padding-inline-end: 4.0%;
+        }
+
+        .padding-t {
+            padding-top: 1.5%;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: white;
+        }
+
+        form {
+            background-color: white;
+        }
+
+        form .input-group {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            padding: 6px 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+
+    <body>
+        <div class="text-center F1 font30 padding-bt padding-t bold">Com(mady) Center Feedback</div>
+        <div class="container-fluid padding-bt ">
+            <div class="row">
+                <div class="col-xxl-3"></div>
+                <div class="col-9 col-lg-18 ">
+                            <form class="form-horizontal" class="d-flex" action="/addFeedback"
+                                method="POST">
+                                <div class="from-group">
+                                    <label class="col-lg-3 control-label">first name:</label>
+                                    <div class="col-lg-8">
+                                        <input name="firstname" class="form-control me-2" type="text" placeholder="first name" >
+                                    </div>
+                                </div>
+                                <div class="from-group">
+                                    <label class="col-lg-3 control-label">last name:</label>
+                                    <div class="col-lg-8">
+                                        <input name="lastname" class="form-control me-2" type="text" placeholder="lastname">
+                                    </div>
+                                </div>
+                                <div class="from-group">
+                                    <label class="col-lg-3 control-label">email:</label>
+                                    <div class="col-lg-8">
+                                        <input name="email" class="form-control me-2" type="text" placeholder="email">
+                                    </div>
+                                </div>
+                                <div class="from-group">
+                                    <label class="col-lg-3 control-label">Feedback:</label>
+                                    <div class="col-lg-8">
+                                        <input name="comment" class="form-control me-2" type="text" placeholder="feedback">
+                                    </div>
+                                </div>
+                                <div class="padding-t ">
+                                    <button class="btn btn-success" type="submit">Submit</button>
+                                </div>
+                        </form>
+                </div>
+    </body>

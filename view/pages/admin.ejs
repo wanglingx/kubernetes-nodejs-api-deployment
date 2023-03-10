@@ -1,0 +1,122 @@
+<%-include('../partials/header.ejs')%>
+    <!DOCTYPE html>
+    <html lang="" en>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .F1 {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .font16 {
+            font-size: 16px;
+        }
+
+        .font30 {
+            font-size: 30px;
+        }
+
+        .padding-bt {
+            padding-bottom: 1.5%;
+        }
+
+        .padding-ls {
+            padding-inline-start: 4.0%;
+        }
+
+        .padding-le {
+            padding-inline-end: 4.0%;
+        }
+
+        .padding-t {
+            padding-top: 1.5%;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: white;
+        }
+
+        form {
+            background-color: white;
+        }
+
+        form .input-group {
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            padding: 6px 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+
+    <body>
+        <div class="text-center F1 font30 padding-bt padding-t bold">Com(mady) Center Feedback FOR ADMIN!</div>
+        <div class="container-fluid F1 font16 padding-t">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3"></div>
+                <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="bg-warning">
+                                <th scope="col">Ref_id</th>
+                                <th scope="col">first name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Feedback</th>
+                                <th scope="col">status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i of response){ %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= i.Ref_id %>
+                                    </th>
+                                    <td>
+                                        <%= i.firstname %>
+                                    </td>
+                                    <td>
+                                        <%= i.lastname %>
+                                    </td>
+                                    <td>
+                                        <%= i.comment %>
+                                    </td>
+                                    <td>
+                                        <form action="/editStatus/<%= i.Ref_id %>" method="post">
+                                            <div class="from-group">
+                                            <div class="col-lg-8">
+                                                <input name="status" class="form-control me-2" type="text" value="<%= i.status %>">
+                                                <button class="btn btn-success" type="submit">Edit</button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
